@@ -145,7 +145,7 @@ img:hover {
     background-color:#fff;
 }
 
-.home .dark-mode{
+.home,.dark-mode{
     align-items: center;
     justify-content: center;
     text-align: center;

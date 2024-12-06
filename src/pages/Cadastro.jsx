@@ -35,7 +35,7 @@ const Cadastro = () => {
       const hashedPassword = await bcrypt.hash(Senha, 10); // 10 é o número de rounds do bcrypt
 
       // Enviar dados para o backend
-      const res = await axios.post("http://localhost:3000/cadastro", {
+      const res = await axios.post("https://lha-bath.onrender.com/cadastro", {
         Nome,
         CNPJ,
         Telefone,

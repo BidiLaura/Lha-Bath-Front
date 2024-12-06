@@ -14,7 +14,7 @@ const Banheiro = () => {
 
   const fetchSensores = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/sensores");
+      const response = await axios.get("https://lha-bath.onrender.com/sensores");
       setSensores(response.data);
       setError(null); // Limpa o erro se a solicitação for bem-sucedida
     } catch (error) {

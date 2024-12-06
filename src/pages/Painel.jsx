@@ -14,7 +14,7 @@ export default function Painel() {
   // Função para buscar os sensores cadastrados
   const fetchSensores = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/sensores"); // API que retorna os sensores
+      const response = await axios.get("https://lha-bath.onrender.com/sensores"); // API que retorna os sensores
 
       // Filtra os sensores com base nos tipos permitidos
       const sensorNames = Object.values(response.data)
