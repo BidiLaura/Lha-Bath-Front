@@ -50,7 +50,7 @@ a {
 }
 
 .login-container {
-    background-color: #fff;
+    background-color: #ffffff;
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -145,13 +145,6 @@ img:hover {
     background-color:#fff;
 }
 
-.home,.dark-mode{
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    height: 100vh;
-    background-color:#000000;
-}
 
 /* Banheiro */
 .banheiro-container {
