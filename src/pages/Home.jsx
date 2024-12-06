@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import NavBar from "../components/NavBar"; // Importando o NavBar corretamente
 import { Link } from "react-router-dom";
-import Banheiros from '../assets/Banheiros';
+import Banheiros from '../assets/banheiros.png';
  
 
 export default function Home() {
@@ -24,7 +24,7 @@ export default function Home() {
             <NavBar darkMode={darkMode} toggleDarkMode={toggleDarkMode} /> {/* Passando darkMode e toggleDarkMode */}
             <div className="home">
                 <h1 className="title-home">Tenha mais gestão e qualidade com o LhaBath!</h1>
-                <img src="{Banheiros}" alt="imagens de banheiros" />
+                <img src={Banheiros} alt="imagens de banheiros" />
                 <Link to={'/login'}><button>Entrar</button></Link>
                 <Link to={'/cadastro'}><button>Criar conta</button>  </Link>          
             </div>

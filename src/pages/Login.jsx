@@ -27,6 +27,7 @@ const Login = () => {
       // Armazenar o token e dados do usuário no localStorage
       localStorage.setItem("token", token); // Armazena o token JWT
       localStorage.setItem("user", JSON.stringify(user)); // Armazena os dados do usuário
+      console.log(token)
 
       // Redireciona para a página de painel após o login
       navigate("/usuario/painel"); // Redireciona com useNavigate
