@@ -1,21 +1,21 @@
 import React, { useState, useRef } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import NavBar from "../components/NavBar"; 
-import bcrypt from "bcryptjs"; 
+import NavBar from "../components/NavBar";
+import bcrypt from "bcryptjs";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [error, setError] = useState(null);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
   const loginContainerRef = useRef(null);
 
   const handleLogin = async (e) => {
     e.preventDefault();
 
     try {
-      const hashedPassword = await bcrypt.hash(senha, 10); 
+      const hashedPassword = await bcrypt.hash(senha, 10);
 
       const response = await axios.post("https://lha-bath.onrender.com/login", {
         Email: email,
@@ -75,9 +75,9 @@ const Login = () => {
             />
             <button type="submit">Login</button>
           </form>
-          <div>
-            <p>Não tem conta? <a href="/cadastro">Cadastre-se aqui</a></p>
-          </div>
+          <li>
+            <a className="logs" href="/cadastro">Não tem login? Cadastre-se aqui</a>
+          </li>
         </div>
       </div>
     </>

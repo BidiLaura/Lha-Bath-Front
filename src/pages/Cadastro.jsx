@@ -118,7 +118,7 @@ const Cadastro = () => {
           <button onClick={handleSubmit}>Cadastrar</button>
           {error && <p style={{ color: "red" }}>{error}</p>} {/* Mensagem de erro */}
           <li>
-            <a href="/login">Já tem cadastro? Entre aqui!</a>
+            <a className="logs" href="/login">Já tem cadastro? Entre aqui!</a>
           </li>
         </div>
       </div>

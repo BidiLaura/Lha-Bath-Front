@@ -4,7 +4,7 @@ import { Navbar, Nav, Form } from "react-bootstrap";
 
 export default function NavBar({ darkMode, toggleDarkMode }) {  // Recebendo darkMode e toggleDarkMode
   return (
-    <Navbar className={darkMode ? "navbar dark-mode" : "navbar"}> {/* Ajustando o estilo baseado no darkMode */}
+    <Navbar className={darkMode ? "navbar dark-mode" : "navbar"}> 
       <Navbar.Brand>LhaBath</Navbar.Brand>
       <Nav className="ml-auto">
         <ul>

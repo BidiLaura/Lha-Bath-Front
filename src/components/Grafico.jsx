@@ -19,10 +19,9 @@ export default function SensorChartsCacetada({ sensorId, sensorType }) {
   const [loading, setLoading] = useState(true);
   const [errors, setErrors] = useState({});
   const periods = ["Diario", "Semanal", "Mensal", "Anual"];
-  const allowedSensorTypes = ["Umidade", "Papel", "Sabao"]; // Tipos permitidos
+  const allowedSensorTypes = ["Umidade", "Papel", "Sabao"]; // Tipos permitidos de sensores
 
   useEffect(() => {
-    // Ignorar sensores que não estão na lista permitida
     if (!allowedSensorTypes.includes(sensorType)) {
       setErrors({ global: "Tipo de sensor não suportado para gráficos." });
       setLoading(false);
@@ -52,7 +51,7 @@ export default function SensorChartsCacetada({ sensorId, sensorType }) {
                 {
                   label: `Média (${period})`,
                   data: values,
-                  backgroundColor: "rgba(75, 192, 192, 0.6)",
+                  backgroundColor: "rgba(75, 192, 192, 0.6)", // Cor para os gráficos
                 },
               ],
             };
@@ -73,7 +72,7 @@ export default function SensorChartsCacetada({ sensorId, sensorType }) {
     fetchData();
   }, [sensorId, sensorType]);
 
-  // Estilo responsivo
+  // Estilo responsivo para o layout de gráficos
   const containerStyle = {
     display: "grid",
     gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",

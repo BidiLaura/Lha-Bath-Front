@@ -24,9 +24,13 @@ a:hover {
 
 a {
     text-decoration: none !important;
-    color: #ffffff !important;
+    color: #eeeeee !important;
 }
 
+.logs {
+    text-decoration: none !important;
+    color: #2C8D7C !important;
+}
 
 .login-overlay {
     position: fixed;
@@ -55,7 +59,7 @@ a {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 300px;
-    max-width: 100%;
+    max-width: 90%;
     opacity: 0;
     transform: translateY(-50px);
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -69,33 +73,25 @@ a {
 input {
     width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
+    margin-bottom: 10px !important;
+    border: 1px solid #000000;
     border-radius: 5px;
 }
 
 button {
-    width: 100px !important;
+    width: 150px !important;
     padding: 10px !important;
     background-color: #2C8D7C !important;
-    color: rgb(0, 0, 0) !important;
+    color: rgb(255, 255, 255) !important;
     border: none !important;
     border-radius: 5px !important;
     cursor: pointer !important;
-    margin: 40px !important; 
+    margin: 30px !important; 
 }
 
-button a {
-    text-decoration: none !important;
-    color: #000000 !important;
-}
 
 button:hover {
     background-color: #0e453b !important;
-    color: #ffffff !important;
-}
-
-button a:hover {
     color: #ffffff !important;
 }
 
@@ -240,6 +236,7 @@ img:hover {
     flex-direction: column;
     gap: 2rem;
     padding: 2rem;
+    height: 100vh;
 }
 
 /* Estilo para os títulos dos sensores */
@@ -358,14 +355,6 @@ img:hover {
     box-shadow: none;
 }
 
-/* Posiciona o ícone de perfil no canto superior direito */
-.profile-icon {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 1000; /* Garante que o dropdown fique sobre outros elementos */
-}
-
 /* Remove estilos padrão do botão */
 .profile-icon .dropdown-toggle {
     background: none;
@@ -414,4 +403,111 @@ img:hover {
     .profile-icon .dropdown-menu {
         min-width: 150px;
     }
+}
+
+/* Estilos gerais para desktop */
+body {
+    font-size: 16px;
+    background-color: #fff;
+}
+
+/* Estilos para dispositivos com largura de tela até 768px (geralmente tablets e smartphones) */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;  /* Menor tamanho de fonte para telas menores */
+    }
+
+    .container {
+        padding: 10px;  /* Ajuste o espaçamento */
+    }
+}  
+
+.dark-mode {
+    background-color: #000000;  /* Cor de fundo escura */
+    color: #ffffff;  /* Cor do texto clara */
+    transition: all 1s ease; 
+}
+
+.dark-mode .navbar{
+    background-color: #2C8D7C;  /* Cor de fundo escura */
+    color: #ffffff;  /* Cor do texto clara */
+}
+
+.dark-mode .login-container {
+    background-color: #121212;  /* Cor de fundo escura */
+    color: #ffffff;  /* Cor do texto clara */
+}
+
+.dark-mode .home {
+    background-color: #181818;  /* Cor de fundo escura para o conteúdo da Home */
+    transition: background-color 0.5s ease, color 0.5s ease;  /* Transição suave */
+}
+
+.dark-mode .title-home {
+    color: #fff;
+    transition: color 0.5s ease; /* Transição suave no título */
+}
+
+.dark-mode img {
+    filter: brightness(0.7);  /* Torna a imagem mais escura no modo escuro */
+    transition: filter 0.5s ease; /* Transição suave na imagem */
+}
+
+.dark-mode .logs {
+    color: #00ff00; /* Cor dos links de logs no modo escuro */
+    transition: color 0.5s ease;
+}
+
+.dark-mode a {
+    color: #ffffff;  /* Cor do link no modo escuro */
+    transition: color 0.5s ease; /* Transição suave nos links */
+}
+
+.dark-mode .custom-switch .form-check-input {
+    background-color: #17473F;
+    transition: background-color 0.3s ease;  /* Transição suave para o switch */
+}
+
+.dark-mode .custom-switch .form-check-input:checked {
+    background-color: #92a6b5;
+}
+
+/* Efeitos de transição no hover dos links no modo escuro */
+.dark-mode a:hover {
+    color: #f1f1f1;
+    transition: color 0.3s ease;
+}
+
+/* Ajustes para o overlay de login no modo escuro */
+.login-overlay {
+    background-color: rgb(0, 0, 0);  /* Escurecendo o fundo no modo escuro */
+    transition: background-color 0.5s ease; /* Transição no fundo */
+}
+
+
+.dark-mode .charts-container {
+    background-color: #000000;  /* Cor de fundo para a área de gráficos */
+}
+
+.dark-mode{
+    background-color: #000;
+}
+
+.dark-mode .sensor-charts>div {
+    background-color: #2C8D7C;  /* Cor do gráfico em modo escuro */
+    color: #ffffff;  /* Cor do texto dos gráficos */
+}
+
+.dark-mode .sensor-charts>div p {
+    color: #d9d9d9; /* Texto dos gráficos mais suave no modo escuro */
+}
+
+.dark-mode .sensor{
+    background-color: #444343;
+    border: 1px solid #000000;
+
+}
+
+.dark-mode .sensor-container{
+    background-color: #000000;
 }

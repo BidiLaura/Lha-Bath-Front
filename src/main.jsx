@@ -10,6 +10,7 @@ import ProtectedRoute from "./pages/ProtectedRoute";
 import AcessDenied from "./pages/AccessDenied";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./index.css"; 
+import Usuario from "./pages/Usuario";
 
 
 const router = createBrowserRouter([
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/cadastro",
-    element: <Cadastro />,
+    element: <Cadastro />, 
   },
   {
     path: "/usuario",
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "/usuario/painel",
         element: <Painel />,
+      },
+      {
+        path: "/usuario/info",
+        element: <Usuario />,
       },
     ],
   },
