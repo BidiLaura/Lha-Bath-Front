@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom"; 
 import NavBar from "../components/NavBar"; 
+import { Link } from "react-router-dom";
 import bcrypt from "bcryptjs"; // Importando bcryptjs para fazer o hash da senha no cliente
 
 const Cadastro = () => {
@@ -118,7 +119,7 @@ const Cadastro = () => {
           <button onClick={handleSubmit}>Cadastrar</button>
           {error && <p style={{ color: "red" }}>{error}</p>} {/* Mensagem de erro */}
           <li>
-            <a className="logs" href="/login">Já tem cadastro? Entre aqui!</a>
+          <Link to={'/login'}><a className="logs">Já tem cadastro? Entre aqui!</a> </Link> 
           </li>
         </div>
       </div>
