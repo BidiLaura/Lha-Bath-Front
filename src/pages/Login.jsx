@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import bcrypt from "bcryptjs";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -76,7 +77,7 @@ const Login = () => {
             <button type="submit">Login</button>
           </form>
           <li>
-            <a className="logs" href="/cadastro">Não tem login? Cadastre-se aqui</a>
+          <Link to={'/cadastro'}><a className="logs">Não tem conta? Cadastre-se aqui</a>  </Link>          
           </li>
         </div>
       </div>
