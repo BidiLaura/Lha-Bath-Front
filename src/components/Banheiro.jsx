@@ -45,7 +45,7 @@ const Banheiro = () => {
         return <FaTrash className="sensor-icon" />;
       case "Papel":
         return <FaToiletPaper className="sensor-icon" />;
-      case "Sabao":
+      case "Sabão":
         return <FaSoap className="sensor-icon" />;
       default:
         return null;
@@ -56,10 +56,10 @@ const Banheiro = () => {
     if (type === "Papel" && value < 5) {
       return "Atenção: Papel está acabando!";
     }
-    if (type === "Lixeira" && value === 1) {
+    if (type === "Lixeira" && value > 95) {
       return "Atenção: Lixeira está cheia!";
     }
-    if (type === "Sabao" && value < 10) { 
+    if (type === "Sabão" && value < 10) { 
       return "Atenção: Sabão está acabando!";
     }
     return null;
