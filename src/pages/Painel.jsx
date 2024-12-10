@@ -44,7 +44,6 @@ export default function Painel() {
   return (
     <>
       <NavBarPainel darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      <h2>Status do seu banheiro:</h2>
       <Banheiro />
       <div className="charts-container">
         <p style={{ marginTop: "20px", fontStyle: "italic" }}>

@@ -6,6 +6,7 @@
     font-family: "Jura", sans-serif;
 }
 
+/* Navbar */
 .nav,
 ul {
     list-style: none;
@@ -17,21 +18,21 @@ ul {
     text-decoration: none;
 }
 
-a:hover {
-    color: #000000 !important;
-    transition: all 200ms linear !important;
-}
-
 a {
     text-decoration: none !important;
     color: #eeeeee !important;
 }
 
+a:hover {
+    color: #000000 !important;
+    transition: all 200ms linear !important;
+}
+
 .logs {
-    text-decoration: none !important;
     color: #2C8D7C !important;
 }
 
+/* Login overlay */
 .login-overlay {
     position: fixed;
     top: 0;
@@ -53,6 +54,7 @@ a {
     pointer-events: all;
 }
 
+/* Container de login */
 .login-container {
     background-color: #ffffff;
     padding: 40px;
@@ -70,6 +72,7 @@ a {
     transform: translateY(0);
 }
 
+/* Inputs e botões */
 input {
     width: 100%;
     padding: 10px;
@@ -86,15 +89,15 @@ button {
     border: none !important;
     border-radius: 5px !important;
     cursor: pointer !important;
-    margin: 30px !important; 
+    margin: 30px !important;
 }
-
 
 button:hover {
     background-color: #0e453b !important;
     color: #ffffff !important;
 }
 
+/* Efeito para a imagem */
 img {
     width: 50%;
     max-height: 500px;
@@ -110,7 +113,7 @@ img:hover {
     transform: scale(1.1);
 }
 
-/* Definindo a animação */
+/* Animação fade-in */
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -123,10 +126,7 @@ img:hover {
     }
 }
 
-.title {
-    margin-bottom: 10px;
-}
-
+/* Estilos gerais */
 .title-home {
     text-align: center;
     padding: 40px;
@@ -138,11 +138,10 @@ img:hover {
     justify-content: center;
     text-align: center;
     height: 100vh;
-    background-color:#fff;
+    background-color: #fff;
 }
 
-
-/* Banheiro */
+/* Ajustes de layout para Banheiro */
 .banheiro-container {
     padding: 20px;
     margin: 10px;
@@ -176,6 +175,7 @@ img:hover {
     margin-top: 10px;
 }
 
+/* Container de sensores */
 .sensor-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -227,77 +227,24 @@ img:hover {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-}
 
-
-/* Estilo para o container de gráficos */
-.charts-container {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 2rem;
-    height: 100vh;
-}
-
-/* Estilo para os títulos dos sensores */
-.chart-wrapper {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 2rem;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.chart-wrapper h3 {
-    text-align: center;
-    margin-bottom: 1rem;
-    color: #2C8D7C;
-}
-
-/* Estilo para os gráficos (diário, semanal, mensal, anual) */
-.sensor-charts {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-/* Estilo para cada gráfico individual */
-.sensor-charts>div {
-    background-color: #2C8D7C;
-    color: #ffffff;
-    flex: 1;
-    min-width: 220px;
-    /* Garantir ajuste para telas pequenas */
-    max-width: 24%;
-    padding: 1.5rem;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.sensor-charts>div h4 {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-    color: #fff;
-}
-
-.sensor-charts>div p {
-    font-size: 0.9rem;
-    color: #d9d9d9;
-}
-
-/* Ajustes responsivos */
-@media (max-width: 768px) {
     .sensor-charts>div {
         max-width: 48%;
     }
-}
 
-@media (max-width: 480px) {
+    /* Tamanho de fonte para dispositivos menores */
+    body {
+        font-size: 14px;
+    }
+
+    .navbar,
+    .ml-auto {
+        flex-direction: column;
+        font-size: 16px;
+        padding: 20px;
+    }
+
+    /* Ajustando os gráficos para telas pequenas */
     .sensor-charts {
         flex-direction: column;
         align-items: center;
@@ -305,6 +252,42 @@ img:hover {
 
     .sensor-charts>div {
         max-width: 100%;
+    }
+
+    .login-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    img {
+        width: 80%;
+        max-height: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .sensor-charts>div {
+        max-width: 100%;
+    }
+
+    .sensor-charts {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .login-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .cadastro-container {
+        width: 90%;
+        padding: 15px;
     }
 }
 
@@ -321,7 +304,6 @@ img:hover {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Estilizando o Navbar.Brand */
 .navbar .navbar-brand {
     font-size: 30px !important;
     color: white !important;
@@ -330,7 +312,7 @@ img:hover {
     margin-left: 20px;
 }
 
-/* Estilo personalizado para o Form.Check */
+/* Estilo para o Form.Check */
 .custom-switch .form-check-input {
     width: 50px;
     height: 25px;
@@ -346,32 +328,15 @@ img:hover {
     background-color: #17473F;
 }
 
-.custom-switch .form-check-input:checked:before {
-    left: 26px;
-}
-
 .custom-switch .form-check-input:focus {
     outline: none;
     box-shadow: none;
 }
 
-/* Remove estilos padrão do botão */
-.profile-icon .dropdown-toggle {
-    background: none;
-    border: none;
-    padding: 0;
-    color: #ffffff;
-    cursor: pointer;
-}
-
-.profile-icon .dropdown-toggle:focus {
-    box-shadow: none;
-}
-
-/* Estilo do dropdown */
+/* Estilos para o dropdown */
 .profile-icon .dropdown-menu {
     position: absolute;
-    top: 40px; /* Espaço abaixo do ícone */
+    top: 40px;
     right: 0;
     background-color: #2C8D7C;
     border: none;
@@ -379,11 +344,10 @@ img:hover {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     padding: 10px 0;
     min-width: 200px;
-    z-index: 1100; /* Garante sobreposição */
+    z-index: 1100;
     text-align: left;
 }
 
-/* Estilo dos links no dropdown */
 .profile-icon .dropdown-menu a {
     color: #ffffff;
     padding: 10px 20px;
@@ -398,116 +362,69 @@ img:hover {
     color: #ffffff;
 }
 
-/* Ajustes para telas menores */
-@media (max-width: 768px) {
-    .profile-icon .dropdown-menu {
-        min-width: 150px;
-    }
-}
-
-/* Estilos gerais para desktop */
-body {
-    font-size: 16px;
-    background-color: #fff;
-}
-
-/* Estilos para dispositivos com largura de tela até 768px (geralmente tablets e smartphones) */
-@media (max-width: 768px) {
-    body {
-        font-size: 14px;  /* Menor tamanho de fonte para telas menores */
-    }
-
-    .container {
-        padding: 10px;  /* Ajuste o espaçamento */
-    }
-}  
-
+/* Modo escuro */
 .dark-mode {
-    background-color: #000000;  /* Cor de fundo escura */
-    color: #ffffff;  /* Cor do texto clara */
-    transition: all 1s ease; 
+    background-color: #000000;
+    color: #ffffff;
 }
 
-.dark-mode .navbar{
-    background-color: #2C8D7C;  /* Cor de fundo escura */
-    color: #ffffff;  /* Cor do texto clara */
+.dark-mode .navbar {
+    background-color: #2C8D7C;
+    color: #ffffff;
 }
 
 .dark-mode .login-container {
-    background-color: #121212;  /* Cor de fundo escura */
-    color: #ffffff;  /* Cor do texto clara */
+    background-color: #121212;
+    color: #ffffff;
 }
 
 .dark-mode .home {
-    background-color: #000000;  /* Cor de fundo escura para o conteúdo da Home */
-    transition: background-color 0.5s ease, color 0.5s ease;  /* Transição suave */
+    background-color: #000000;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .dark-mode .title-home {
     color: #fff;
-    transition: color 0.5s ease; /* Transição suave no título */
 }
 
 .dark-mode img {
-    filter: brightness(0.7);  /* Torna a imagem mais escura no modo escuro */
-    transition: filter 0.5s ease; /* Transição suave na imagem */
+    filter: brightness(0.7);
+    transition: filter 0.5s ease;
 }
 
 .dark-mode .logs {
-    color: #00ff00; /* Cor dos links de logs no modo escuro */
+    color: #00ff00;
     transition: color 0.5s ease;
 }
 
 .dark-mode a {
-    color: #ffffff;  /* Cor do link no modo escuro */
-    transition: color 0.5s ease; /* Transição suave nos links */
-}
-
-.dark-mode .custom-switch .form-check-input {
-    background-color: #17473F;
-    transition: background-color 0.3s ease;  /* Transição suave para o switch */
-}
-
-.dark-mode .custom-switch .form-check-input:checked {
-    background-color: #92a6b5;
-}
-
-/* Efeitos de transição no hover dos links no modo escuro */
-.dark-mode a:hover {
-    color: #f1f1f1;
-    transition: color 0.3s ease;
-}
-
-/* Ajustes para o overlay de login no modo escuro */
-.login-overlay {
-    background-color: rgba(0, 0, 0, 0.551);  /* Escurecendo o fundo no modo escuro */
-    transition: background-color 0.5s ease; /* Transição no fundo */
-}
-
-
-.dark-mode .charts-container {
-    background-color: #000000;  /* Cor de fundo para a área de gráficos */
-}
-
-.dark-mode{
-    background-color: #000;
+    color: #ffffff;
 }
 
 .dark-mode .sensor-charts>div {
-    background-color: #2C8D7C;  /* Cor do gráfico em modo escuro */
-    color: #ffffff;  /* Cor do texto dos gráficos */
+    background-color: #2C8D7C;
+    color: #ffffff;
 }
 
 .dark-mode .sensor-charts>div p {
-    color: #d9d9d9; /* Texto dos gráficos mais suave no modo escuro */
-}
-
-.dark-mode .sensor{
-    background-color: #444343;
-    border: 1px solid #000000;
+    color: #d9d9d9;
+    transition: color 1s ease;
 
 }
 
-.dark-mode .sensor-container{
+.dark-mode .sensor {
+    background-color: #000000;
+    border: 1px solid #0e453b;
+}
+
+.dark-mode .sensor-container {
     background-color: #000000;
 }
+
+.dark-mode h5 {
+   color: #ccc;
+}
+
+.dark-mode .sensor-result{
+    color: #ccc;
+ }

@@ -37,7 +37,7 @@ export default function SensorChartsCacetada({ sensorId, sensorType }) {
           // Verifica se os dados já estão no cache
           if (!dataCache[period]) {
             const response = await axios.get(
-              `https://lha-bath.onrender.com/sensor-history/${period}/${sensorId}`,
+              `http://localhost:3000/sensor-history/${period}/${sensorId}`,
               { params: { type: sensorType } }
             );
 
