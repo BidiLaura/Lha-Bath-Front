@@ -11,7 +11,6 @@ import {
   Legend,
 } from "chart.js";
 
-// Registrando os componentes necessários para o Chart.js
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 export default function SensorChartsCacetada({ sensorId, sensorType }) {
@@ -19,7 +18,7 @@ export default function SensorChartsCacetada({ sensorId, sensorType }) {
   const [loading, setLoading] = useState(true);
   const [errors, setErrors] = useState({});
   const periods = ["Diario", "Semanal", "Mensal", "Anual"];
-  const allowedSensorTypes = ["Umidade", "Papel", "Sabao"]; // Tipos permitidos de sensores
+  const allowedSensorTypes = ["Umidade", "Papel", "Sabão"];
 
   useEffect(() => {
     if (!allowedSensorTypes.includes(sensorType)) {
@@ -29,33 +28,31 @@ export default function SensorChartsCacetada({ sensorId, sensorType }) {
     }
 
     const fetchData = async () => {
-      setLoading(true); // Inicia o estado de carregamento
-      let dataCache = {};
+      setLoading(true);
+      const dataCache = {}; // Inicializa o cache limpo
 
       for (let period of periods) {
         try {
-          // Verifica se os dados já estão no cache
-          if (!dataCache[period]) {
-            const response = await axios.get(
-              `http://localhost:3000/sensor-history/${period}/${sensorId}`,
-              { params: { type: sensorType } }
-            );
+          const response = await axios.get(
+            `http://localhost:3000/sensor-history/${period}/${sensorId}`,
+            { params: { type: sensorType } }
+          );
 
-            // Formata os dados para Chart.js
-            const labels = response.data.map((_, index) => `${index + 1}`);
-            const values = response.data.map((item) => item.Resultado);
+          const labels = response.data.map((_, index) => `${index + 1}`);
+          const values = response.data.map((item) => item.Resultado);
 
-            dataCache[period] = {
-              labels,
-              datasets: [
-                {
-                  label: `Média (${period})`,
-                  data: values,
-                  backgroundColor: "rgba(75, 192, 192, 0.6)", // Cor para os gráficos
-                },
-              ],
-            };
-          }
+          dataCache[period] = {
+            labels,
+            datasets: [
+              {
+                label: `Média (${period})`,
+                data: values,
+                backgroundColor: `rgba(${Math.random() * 255}, ${
+                  Math.random() * 255
+                }, ${Math.random() * 255}, 0.6)`, // Cores dinâmicas
+              },
+            ],
+          };
         } catch (error) {
           setErrors((prev) => ({
             ...prev,
@@ -66,13 +63,12 @@ export default function SensorChartsCacetada({ sensorId, sensorType }) {
       }
 
       setChartData(dataCache);
-      setLoading(false); // Finaliza o carregamento
+      setLoading(false);
     };
 
     fetchData();
   }, [sensorId, sensorType]);
 
-  // Estilo responsivo para o layout de gráficos
   const containerStyle = {
     display: "grid",
     gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
