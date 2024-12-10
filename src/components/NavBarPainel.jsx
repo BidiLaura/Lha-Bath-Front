@@ -15,6 +15,7 @@ export default function NavBarPainel({ darkMode, toggleDarkMode }) {
           </Dropdown.Toggle>
           <Dropdown.Menu>
             <Dropdown.Item as={Link} to="/home">Home</Dropdown.Item>
+            <Dropdown.Item as={Link} to="/usuario/painel">Painel</Dropdown.Item>
             <Dropdown.Item as={Link} to="/usuario/info">Usuário</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>

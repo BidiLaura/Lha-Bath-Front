@@ -3,7 +3,6 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom"; 
 import NavBar from "../components/NavBar"; 
 import { Link } from "react-router-dom";
-import bcrypt from "bcryptjs"; // Importando bcryptjs para fazer o hash da senha no cliente
 
 const Cadastro = () => {
   const [formData, setFormData] = useState({
@@ -33,15 +32,14 @@ const Cadastro = () => {
 
     try {
       // Fazendo o hash da senha no cliente antes de enviar para o servidor
-      const hashedPassword = await bcrypt.hash(Senha, 10); // 10 é o número de rounds do bcrypt
-
+      
       // Enviar dados para o backend
       const res = await axios.post("http://localhost:3000/cadastro", {
         Nome,
         CNPJ,
         Telefone,
         Email,
-        Senha: hashedPassword, // Envia a senha já criptografada
+        Senha, // Envia a senha já criptografada
       });
 
       // Salvar token e redirecionar

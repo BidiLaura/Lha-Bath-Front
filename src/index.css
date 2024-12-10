@@ -346,6 +346,7 @@ img:hover {
     min-width: 200px;
     z-index: 1100;
     text-align: left;
+    margin: 30px;
 }
 
 .profile-icon .dropdown-menu a {
@@ -385,11 +386,6 @@ img:hover {
 
 .dark-mode .title-home {
     color: #fff;
-}
-
-.dark-mode img {
-    filter: brightness(0.7);
-    transition: filter 0.5s ease;
 }
 
 .dark-mode .logs {

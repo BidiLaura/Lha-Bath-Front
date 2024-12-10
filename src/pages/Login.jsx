@@ -16,11 +16,10 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const hashedPassword = await bcrypt.hash(senha, 10);
 
       const response = await axios.post("http://localhost:3000/login", {
         Email: email,
-        Senha: hashedPassword, // Envia a senha já criptografada
+        Senha: senha, // Envia a senha já criptografada
       });
 
       const { token, user } = response.data;

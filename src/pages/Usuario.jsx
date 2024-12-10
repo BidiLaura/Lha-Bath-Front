@@ -24,8 +24,7 @@ export default function Usuario() {
   return (
     <>
       <NavBarPainel darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      <Link to={'/usuario/painel'}><button>Voltar para o painel</button>  </Link>          
-
+      
       <div className="charts-container">
         <h2>Gráficos dos Sensores</h2>
         
